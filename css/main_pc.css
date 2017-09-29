@@ -1,0 +1,224 @@
+/* **** Kolory **** */
+
+/*
+niebieski:              hsl(234, 99%, 49%);
+błękitny:               hsl(183, 95%, 54%);
+czerwony:               hsl(359, 94%, 20%);
+jasny czerwony:         hsl(360, 88%, 50%);
+pomarańczowy:           hsl(29, 100%, 35%);
+jasny pomarańczowy:     hsl(37, 90%, 52%);
+fioletowy:              hsl(248, 53%, 49%);
+biały:                  hsl(246, 49%, 92%);
+
+tło:                    hsl(225, 13%, 10%);
+guzik:                  hsl(218, 8%, 21%);
+*/
+
+/* **** Czcionki **** */
+
+/*
+w3-large	Specifies a font size of 18 pixels
+w3-xlarge	Specifies a font size of 24 pixels
+w3-xxlarge	Specifies a font size of 32 pixels
+w3-xxxlarge	Specifies a font size of 48 pixels
+w3-jumbo	Specifies a font size of 64 pixels
+*/
+
+/* **** Layout **** */
+
+@font-face {
+    font-family: "digital-7";
+    src: url(../digital-7.ttf);
+}
+
+#wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/pattern.png);
+}
+
+#box {
+    width: 400px;
+    height: 500px;
+    background: hsl(225, 13%, 10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0 2px 2px 4px black;
+}
+
+#controls {
+    text-align: center;
+    color: hsl(37, 90%, 52%);
+}
+
+#timer {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    background: hsl(225, 13%, 10%);
+    margin-top: 20px;
+}
+
+#button {
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+    background: hsl(218, 8%, 21%);
+    border: hsl(218, 8%, 31%) 2px solid;
+    border-radius: 20px;
+    box-shadow: 0 2px 2px 4px black;
+    position: relative;
+}
+
+#switch {
+    width: 60px;
+    height: 40px;
+    background: hsl(248, 53%, 40%);
+    border: hsl(218, 8%, 31%) 2px solid;
+    border-radius: 20px;
+    box-shadow: 0 0 2px 2px black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#switch:hover {
+    cursor: pointer;
+
+}
+
+/* **** Minutes **** */
+
+.rotatecircle-minutes {
+    width: 50%;
+    height: 100%;
+    border-width: 6px;
+    border-color: hsl(234, 99%, 49%);
+    border-style: solid;
+    border-right: none;
+    border-radius: 150px 0 0 150px;
+    position: absolute;
+    transform-origin: right;
+    box-sizing: border-box;
+}
+
+.halfcircle-minutes {
+    width: 50%;
+    height: 100%;
+    border-width: 12px;
+    border-color: hsl(234, 99%, 49%);
+    border-style: double;
+    border-left: none;
+    border-radius: 0 150px 150px 0;
+    float: right;
+    box-sizing: border-box;
+}
+
+/* **** Seconds **** */
+
+.rotatecircle-seconds {
+    width: 40%;
+    height: 80%;
+    border-width: 4px;
+    border-color: hsl(360, 88%, 50%);
+    border-style: solid;
+    border-right: none;
+    border-radius: 150px 0 0 150px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform-origin: right;
+    box-sizing: border-box;
+}
+
+.halfcircle-seconds {
+    width: 40%;
+    height: 80%;
+    border-width: 8px;
+    border-color: hsl(360, 88%, 50%);
+    border-style: double;
+    border-left: none;
+    border-radius: 0 150px 150px 0;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    box-sizing: border-box;
+}
+
+/* **** Style **** */
+
+#time {
+    top: 42%;
+    left: 26%;
+    position: absolute;
+    display: flex;
+    color: hsl(37, 90%, 52%);
+}
+
+h1 {
+    font-size: 64px;
+    font-family: "digital-7", monospace;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 32px;
+    font-family: "Oswald", monospace;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+#forward,
+#backward,
+#number {
+    font-size: 24px;
+    font-family: "digital-7", monospace;
+    cursor: pointer;
+    margin: 5px 20px;
+}
+
+h3 {
+    font-size: 32px;
+    font-family: "Oswald", monospace;
+    display: inline;
+    margin: 0 9px;
+    color: hsl(246, 49%, 92%);
+}
+
+/* **** Animation **** */
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateSec {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.moveRight {
+}
+
+.rotateMinutes {
+    animation: rotate 120s linear infinite;
+    animation-duration:
+}
+
+.rotateSeconds {
+    animation: rotateSec 60s linear infinite;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="author" content="Tomasz Rybacki">
+    <meta name="keywords" content="czasomierz">
+    <meta name="description" content="Czasomierz, który odlicza zadany przez użytkownika czas.">
+
+    <title>Czasomierz</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon96x96.png">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,600&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main_pc.css">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="box">
+            <div id="controls">
+                <h2>Ustaw czas</h2>
+                <span id="backward">&#8882;</span>
+                <span id="number">5</span>
+                <span id="forward">&#8883;</span>
+            </div>
+            <div id="timer">
+                <div class="rotatecircle-minutes"></div>
+                <div class="halfcircle-minutes"></div>
+                <div class="rotatecircle-seconds"></div>
+                <div class="halfcircle-seconds"></div>
+                <div id="time">
+                    <h1 id="minutes">05</h1>
+                    <h1>:</h1>
+                    <h1 id="seconds">00</h1>
+                </div>
+            </div>
+            <div id="button">
+                <h3>ON</h3>
+                <h3>OFF</h3>
+                <div id="switch"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/jquery-3.2.0.min.js"></script>
+    <script src="scripts/code.js"></script>
+</body>
+
+</html>
