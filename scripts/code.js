@@ -38,6 +38,12 @@ let seconds = 0;
 
 forwardElem.on("click", function () {
     "use strict";
+    if (minutes === 0 && seconds === 0) {
+        buttonElem.css("pointer-events", "auto");
+        halfcircleElem.css("background-color", "hsl(225, 13%, 10%)");
+        secondsElem.css("background-color", "hsl(225, 13%, 10%)");
+    }
+
     if (minutes < 25) {
         minutes += 1;
         seconds = 0;
@@ -50,8 +56,6 @@ forwardElem.on("click", function () {
             minutesDisplay.text("" + minutes);
             secondsDisplay.text("00");
         }
-        halfcircleElem.css("background-color", "hsl(225, 13%, 10%)");
-        secondsElem.css("background-color", "hsl(225, 13%, 10%)");
     }
 
 });
@@ -87,17 +91,19 @@ function update() {
 
     seconds -= 1;
 
-    if (minutes < 10) {
-        minutesDisplay.text("0" + minutes);
-    }
-    if (seconds < 10) {
-        secondsDisplay.text("0" + seconds);
-    }
+    // text display
+
     if (minutes >= 10) {
         minutesDisplay.text("" + minutes);
     }
+    if (minutes < 10) {
+        minutesDisplay.text("0" + minutes);
+    }
     if (seconds >= 10) {
         secondsDisplay.text("" + seconds);
+    }
+    if (seconds < 10) {
+        secondsDisplay.text("0" + seconds);
     }
 
     if (minutes === 0 && seconds === 0) {
@@ -108,5 +114,6 @@ function update() {
         secondsElem.toggleClass("rotateSeconds");
         buttonElem.toggleClass("moveRight");
         buttonElem.animate({left: "-=60"}, 1000);
+        buttonElem.css("pointer-events", "none");
     }
 }
